@@ -1,0 +1,64 @@
+<div class="toolbar">
+  <h1 id="pageTitle">
+    Edit <%=@site.number%>
+  </h1>
+</div>
+<!--
+     LatitudeMeasure       36.9913389    
+  LongitudeMeasure   -121.9557933   
+  MeasureUnitCode   sq mi   
+  MeasureValue   40.2   
+  MonitoringLocationIdentifier   USGS-11160000   
+  MonitoringLocationName   SOQUEL C A SOQUEL CA   
+  MonitoringLocationTypeName 
+-->
+
+<form title="Edit Site" 
+    class="panel" 
+    id="site_edit_form" 
+    method="POST" 
+    action="<%=url_for(:action => :update)%>" selected="true">
+  <fieldset>
+    <input type="hidden" name="id" value="<%=@site.object%>"/>
+    
+      <div class="row">
+        <label>Number: </label>
+        <input type="text" name="site[MonitoringLocationIdentifier]" value="<%=@site.MonitoringLocationIdentifier%>"/>
+      </div>
+    
+      <div class="row">
+        <label>Latitude: </label>
+        <input type="text" name="site[LatitudeMeasure]" value="<%=@site.LatitudeMeasure%>"/>
+      </div>
+    
+      <div class="row">
+        <label>Longitude: </label>
+        <input type="text" name="site[LongitudeMeasure]" value="<%=@site.LongitudeMeasure%>"/>
+      </div>
+    
+      <div class="row">
+        <label>City: </label>
+        <input type="text" name="site[MonitoringLocationName]" value="<%=@site.MonitoringLocationName%>"/>
+      </div>
+    
+
+    
+      <div class="row">
+        <label>Drainage area: </label>
+        <input type="text" name="site[MeasureValue]" value="<%=@site.MeasureValue%>"/>
+      </div>
+    
+      <div class="row">
+        <label>Type: </label>
+        <input type="text" name="site[MonitoringLocationTypeName]" value="<%=@site.MonitoringLocationTypeName%>"/>
+      </div>
+    
+    
+  </fieldset>
+  <input type="submit" value="Update"/>
+  <p align="center">
+    <a href="<%=url_for(:action => :delete, :id => @site.object)%>">
+      <font color="#990000">Delete</font>
+    </a>
+  </p>
+</form>

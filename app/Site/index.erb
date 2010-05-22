@@ -1,0 +1,18 @@
+<div class="toolbar">
+  <h1 id="pageTitle">
+    Water Sites
+  </h1>
+</div>
+<ul id="sites" title="Water Sites" selected="true">
+<% if @sites and @sites.size>0%>
+<li><%=link_to "Map sites",:action=>:map%></li>
+<%@sites.each do |x|%>
+<li><%=link_to "#{x.MonitoringLocationName} (#{(@distances[x.object]*100)/100} miles)", :action => :show, :id => x.object%></li>
+<%end%>
+<%elsif @params["search_params"].nil? %>
+<li>Searching for sites... please wait...</li>
+<%else%>
+<li>No sites found</li>
+<%end%>
+</ul>
+

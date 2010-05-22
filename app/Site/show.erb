@@ -1,0 +1,45 @@
+<div class="toolbar">
+	<h1 id="pageTitle">
+		<%=@site.number%>
+	</h1>
+</div>
+
+<div class="panel" selected="true">
+
+<a class="button right_button" href="<%=url_for(:action => :index, :id => @site.object)%>" target="_self">Back to list</a>
+
+<table class="grid">
+  
+  <tr>
+	<td class="gridleft">Identifier</td>
+    <td class="gridright"><%=@site.MonitoringLocationIdentifier%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Name</td>
+    <td class="gridright"><%=@site.MonitoringLocationName%></td>
+  </tr>
+
+  <tr>
+	<td class="gridleft">Latitude</td>
+    <td class="gridright"><%=@site.LatitudeMeasure%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Longitude</td>
+    <td class="gridright"><%=@site.LongitudeMeasure%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Area</td>
+    <td class="gridright"><%=@site.MeasureValue+' '+@site.MeasureUnitCode%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Type</td>
+    <td class="gridright"><%=@site.MonitoringLocationTypeName%></td>
+  </tr>
+
+  
+</table>
+</div>

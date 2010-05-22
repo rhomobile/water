@@ -1,0 +1,57 @@
+<div class="toolbar">
+	<h1 id="pageTitle">
+		New Site
+	</h1>
+</div>
+
+<form title="New Site" 
+	  class="panel"
+	  id="site_new_form" 
+	  method="POST" 
+	  action="<%=url_for(:action => :create)%>" selected="true">
+	<fieldset>
+		<input type="hidden" name="id" value="<%=@site.object%>"/>
+		
+		  <div class="row">
+			  <label>Number: </label>
+			  <input type="text" name="site[number]"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Latitude: </label>
+			  <input type="text" name="site[latitude]"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Longitude: </label>
+			  <input type="text" name="site[longitude]"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>City: </label>
+			  <input type="text" name="site[city]"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>State: </label>
+			  <input type="text" name="site[state]"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Drainage area: </label>
+			  <input type="text" name="site[drainage_area]"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Type: </label>
+			  <input type="text" name="site[type]"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Hydrologic unit: </label>
+			  <input type="text" name="site[hydrologic_unit]"/>
+		  </div>
+		
+	</fieldset>
+	<input type="submit" value="Create"/>
+</form>
